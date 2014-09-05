@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Such Hasselhoff. Many Burgers. Wow.</title>
+
+    <script src="../../uc-basics/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.larson.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="../assets/css/larson.css" />
+</head>
+
+<body>
+
+    <h1>Simple Larson Scanner</h1>
+    <pre>$('.anim2').larson().larson('start');</pre>
+    <div class="larson anim2"></div>
+
+    <h1>Make It Longer! And Stop!1</h1>
+    <pre>var x = $('.anim1').larson({'size': 16}).larson('start');
+setTimeout(function() { x.larson('stop') }, 1000 );</pre>
+    <div class="larson anim1"></div>
+    
+    <h1>Images, per favore</h1>
+    <pre>$('.anim3').larson({ 'on': '<img src="../assets/img/larson_on.svg">', 'off': '<img src="../assets/img/larson_off.svg">' }).larson('start');</pre>
+    <div class="larson anim3"></div>
+    
+    <h1>Quick! To the Batmobile!</h1>
+    <pre>$('.anim4').larson({'duration':200}).larson('start');</pre>
+    <div class="larson anim4"></div>
+
+    <h1>Who</h1>
+    <p>hadez, <a href="https://github.com/hdznrrd">github.com/hdznrrd</a><br>
+reloc0, <a href="https://github.com/reloc0">github.com/reloc0</a><br><br>
+
+(c) Anno domini 2014 - hdznrrd, reloc0 - Residence San Romano, Oliveto, Italy<br>
+Released under Spumante License.<br>
+Alternative license: MIT &amp; send us more to stuff to drink</p>
+
+    <h1>Why?! Oh, God. Why?</h1>
+    <p>Needed animated SVG. SVG animation was too expensive for a simple demo. Had enough to drink.<br>
+<br>
+For the best stupid ideas, we recommend:</p>
+
+    <ul>
+        <li>Morsi Di Luce, Vino Liqoroso Sicilia, 2010</li>
+        <li>Castello di Oliveto, Vino Spumante - Brut</li>
+    </ul>
+
+    <h1>Missing a Feature?</h1>
+    <ol>
+        <li><span class="larson" id="hahalol"></span></li>
+        <li>Send us spumante</li>
+        <li>...</li>
+        <li>Profit!</li>
+    </ol>
+
+    <script type="text/javascript">
+    $(document).ready(function(){ 
+        var x = $('.anim1').larson({'size': 16}).larson('start');
+        $('.anim2').larson().larson('start');
+        $('.anim3').larson({
+            'on': '<img src="../assets/img/larson_on.svg">',
+            'off': '<img src="../assets/img/larson_off.svg">'
+        }).larson('start');
+        $('.anim4').larson({'duration':200}).larson('start');
+
+        $('#hahalol').larson( {
+            'on': '<a href="https://github.com/hdznrrd/jquery.larson.js/">Post feature request</a>',
+            'off': '&nbsp;',
+            'size': 50,
+            'duration': 3000
+            } ).larson('start');
+        setTimeout(function() { x.larson('stop') }, 1000 );
+    });
+    </script>
+</body>
+</html>

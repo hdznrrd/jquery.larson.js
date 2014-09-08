@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Such Hasselhoff. Many Burgers. Wow.</title>
 
-		<script src="https://code.jquery.com/jquery-2.1.1.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.js" type="text/javascript"></script>
     <script src="../js/jquery.larson.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="../assets/css/larson.css" />
@@ -17,8 +17,8 @@
     <div class="larson anim2"></div>
 
     <h1>Make It Longer! And Stop!1</h1>
-    <pre>var x = $('.anim1').larson({'size': 16}).larson('start');
-setTimeout(function() { x.larson('stop') }, 1000 );</pre>
+    <pre>$('.anim1').larson({'size': 16}).larson('start');
+setTimeout(function() { $('.anim1').larson('stop') }, 1000 );</pre>
     <div class="larson anim1"></div>
     
     <h1>Images, per favore</h1>
@@ -57,7 +57,7 @@ For the best stupid ideas, we recommend:</p>
 
     <script type="text/javascript">
     $(document).ready(function(){ 
-        var x = $('.anim1').larson({'size': 16}).larson('start');
+        $('.anim1').larson({'size': 16}).larson('start');
         $('.anim2').larson().larson('start');
         $('.anim3').larson({
             'on': '<img src="../assets/img/larson_on.svg">',
@@ -71,7 +71,7 @@ For the best stupid ideas, we recommend:</p>
             'size': 50,
             'duration': 3000
             } ).larson('start');
-        setTimeout(function() { x.larson('stop') }, 1000 );
+        setTimeout(function() { $('.anim1').larson('stop') }, 1000 );
     });
     </script>
 </body>

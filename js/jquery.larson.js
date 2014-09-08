@@ -14,7 +14,7 @@
             this.rst = this.nled;
             this.cnt = this.nled;
             this.timeout = this.param['duration']/this.nled;
-            this.larson_running = false;
+            this.prop('larson_running', false);
 
             /* setup scanner */
             $(this).find('ul').remove();
@@ -27,12 +27,12 @@
 
         this.larson_start = function() {
             this.larson_setup(this.param);
-            this.larson_running = true;
+            this.prop('larson_running', true);
             this.larson_advance_bkw(this);
         }
 
         this.larson_stop = function() {
-            this.larson_running = false;
+            this.prop('larson_running', false);
         }
 
         function kinkywrap(fn, context) {
@@ -48,7 +48,7 @@
 
         this.larson_advance_bkw = function() {
             $(this).find('ul').append( $(this).find('ul>li:first').remove() );
-            if(this.larson_running) {
+            if(this.prop('larson_running')) {
                 setTimeout( --this.cnt  ? kinkywrap(this.larson_advance_bkw, this)
                                         : kinkywrap(this.larson_advance_fwd, this),
                             this.timeout);
@@ -58,7 +58,7 @@
 
         this.larson_advance_fwd = function() {
             $(this).find('ul').prepend( $(this).find('ul>li:last').remove() );
-            if(this.larson_running) {
+            if(this.prop('larson_running')) {
                 setTimeout( --this.cnt  ? kinkywrap(this.larson_advance_fwd, this)
                                         : kinkywrap(this.larson_advance_bkw, this),
                             this.timeout);
